@@ -4,6 +4,7 @@ const App = () => {
   return (
     <div>
       <Counter/>
+      <h1  className="text-3xl font-bold underline ">Salom</h1>
     </div>
   )
 }

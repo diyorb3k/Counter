@@ -1,0 +1,9 @@
+.counter{
+  text-align: center;
+}
+.counter button{
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+}
