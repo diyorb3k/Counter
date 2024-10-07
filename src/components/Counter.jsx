@@ -25,33 +25,31 @@ const Counter = () => {
 // },[])
 
 
+// useEffect(()=>{
+//   axios.get('https://jsonplaceholder.typicode.com/posts')
+//   .then(response=>{
+//     console.log(response.data)
+//   })
+//   .catch(error=>{
+//     console.log(error.mesagi)
+//   })
+// },[])
+
+
 useEffect(()=>{
   axios.get('https://jsonplaceholder.typicode.com/posts')
   .then(response=>{
     console.log(response.data)
   })
   .catch(error=>{
-    console.log(error.mesagi)
+    console.log('xatoliklar');
   })
 },[])
-
   return (
     <div>
       <Counters count={count} setCount={setCount} />
-      {/* {data.map((pos) => (
-        <div key={pos.id}>
-          <p>{pos.title}</p>
-        </div>
-      ))} */}
+   
 
-    {/* {
-      data.map((salom)=>(
-        <div key={salom.id}>
-<p>{salom.body}</p>
-        </div>
-      ))
-
-} */}
 
 {
   data.map((slaom)=>(
