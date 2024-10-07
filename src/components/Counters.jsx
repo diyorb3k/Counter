@@ -15,7 +15,7 @@ const Counters = ({count,setCount}) => {
   return (
     <div className="counter">
       <h1>{count}</h1>
-        <button onClick={submit}>+</button>
+        <button className='p-10 text-[red]' onClick={submit}>+</button>
         <button onClick={rzsets}>reset</button>
         <button onClick={reset}>-</button>
     </div>
