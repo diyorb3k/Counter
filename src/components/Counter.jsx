@@ -69,11 +69,14 @@ const Counter = () => {
     <div>
       <Counters count={count} setCount={setCount} />
 
-      {data.map((salom) => (
+     {
+      data.map((salom)=>{
         <div key={salom.id}>
-          <p>{salom.title}</p>
+
+<p>{salom.brand}</p>
         </div>
-      ))}
+      })
+     }
     </div>
   );
 };
