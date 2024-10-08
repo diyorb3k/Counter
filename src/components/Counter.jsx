@@ -12,73 +12,68 @@ const Counter = () => {
   //     .then((json) => setData(json));
   // }, []);
 
+  // useEffect(()=>{
+  //   axios.get('https://jsonplaceholder.typicode.com/posts')
+  //   .then(response=>{
+  //     console.log(response.data)
+  //   })
+  //   .catch(error=>{
+  //     console.log('Xatolik yuz berdi:', error)
+  //   })
+  // },[])
 
+  // useEffect(()=>{
+  //   axios.get('https://jsonplaceholder.typicode.com/posts')
+  //   .then(response=>{
+  //     console.log(response.data)
+  //   })
+  //   .catch(error=>{
+  //     console.log(error.mesagi)
+  //   })
+  // },[])
 
-// useEffect(()=>{
-//   axios.get('https://jsonplaceholder.typicode.com/posts')
-//   .then(response=>{
-//     console.log(response.data)
-//   })
-//   .catch(error=>{
-//     console.log('Xatolik yuz berdi:', error)
-//   })
-// },[])
+  // useEffect(()=>{
+  //   axios.get('https://jsonplaceholder.typicode.com/posts')
+  //   .then(response=>{
+  //     console.log(response.data)
+  //   })
+  //   .catch(error=>{
+  //     console.log('xatoliklar');
+  //   })
+  // },[])
 
+  // useEffect(()=>{
+  //   axios.get('https://jsonplaceholder.typicode.com/posts')
+  //   .then(response=>{
+  //     console.log(response.data)
+  //     setData(response.data)
+  //   })
+  //   .catch(error=>{
+  //     console.log('Apidan xatolik')
+  //   })
+  // },[])
 
-// useEffect(()=>{
-//   axios.get('https://jsonplaceholder.typicode.com/posts')
-//   .then(response=>{
-//     console.log(response.data)
-//   })
-//   .catch(error=>{
-//     console.log(error.mesagi)
-//   })
-// },[])
+  useEffect(() => {
+    axios
+      .get("https://nextstoreuz-api.onrender.com/api/product/all")
+      .then((response) => {
+        console.log(response.data);
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.log("Xatolik");
+      });
+  }, []);
 
-
-// useEffect(()=>{
-//   axios.get('https://jsonplaceholder.typicode.com/posts')
-//   .then(response=>{
-//     console.log(response.data)
-//   })
-//   .catch(error=>{
-//     console.log('xatoliklar');
-//   })
-// },[])
-
-
-useEffect(()=>{
-  axios.get('https://jsonplaceholder.typicode.com/posts')
-  .then(response=>{
-    console.log(response.data)
-    setData(response.data)
-  })
-  .catch(error=>{
-    console.log('Apidan xatolik')
-  })
-},[])
   return (
     <div>
       <Counters count={count} setCount={setCount} />
-   
 
-{/* 
-{
-  data.map((slaom)=>(
-    <div key={slaom?.id}>
-<p>{slaom?.title
-}</p>
-    </div>
-  ))
-} */}
-
-{
-  data.map((salom)=>(
-    <div key={salom.id}>
-      <p>{salom.title}</p>
-    </div>
-  ))
-}
+      {data.map((salom) => (
+        <div key={salom.id}>
+          <p>{salom.title}</p>
+        </div>
+      ))}
     </div>
   );
 };
