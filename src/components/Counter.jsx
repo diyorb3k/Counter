@@ -62,12 +62,20 @@ useEffect(()=>{
       <Counters count={count} setCount={setCount} />
    
 
-
+{/* 
 {
   data.map((slaom)=>(
     <div key={slaom?.id}>
 <p>{slaom?.title
 }</p>
+    </div>
+  ))
+} */}
+
+{
+  data.map((salom)=>(
+    <div key={salom.id}>
+      <p>{salom.title}</p>
     </div>
   ))
 }
