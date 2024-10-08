@@ -36,13 +36,25 @@ const Counter = () => {
 // },[])
 
 
+// useEffect(()=>{
+//   axios.get('https://jsonplaceholder.typicode.com/posts')
+//   .then(response=>{
+//     console.log(response.data)
+//   })
+//   .catch(error=>{
+//     console.log('xatoliklar');
+//   })
+// },[])
+
+
 useEffect(()=>{
   axios.get('https://jsonplaceholder.typicode.com/posts')
   .then(response=>{
     console.log(response.data)
+    setData(response.data)
   })
   .catch(error=>{
-    console.log('xatoliklar');
+    console.log('Apidan xatolik')
   })
 },[])
   return (
@@ -53,8 +65,9 @@ useEffect(()=>{
 
 {
   data.map((slaom)=>(
-    <div key={slaom.id}>
-<p>{slaom.title}</p>
+    <div key={slaom?.id}>
+<p>{slaom?.title
+}</p>
     </div>
   ))
 }
