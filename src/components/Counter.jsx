@@ -53,31 +53,33 @@ const Counter = () => {
   //   })
   // },[])
 
-  useEffect(() => {
-    axios
-      .get("https://nextstoreuz-api.onrender.com/api/product/all")
-      .then((response) => {
-        console.log(response.data);
-        setData(response.data);
-      })
-      .catch((error) => {
-        console.log("Xatolik");
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("'https://nextstoreuz-api.onrender.com/api/product/create")
+  //     .then((response) => {
+  //       console.log(response.data);
+  //       setData(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log("Xatolik");
+  //     });
+  // }, []);
 
   return (
+
+
     <div>
       <Counters count={count} setCount={setCount} />
 
-     {
-      data.map((salom)=>{
-        <div key={salom.id}>
-
-<p>{salom.brand}</p>
+      {data.map((salom) => (
+        <div key={salom._id}>
+          <p>{salom.brand}</p>
         </div>
-      })
-     }
+      ))}
     </div>
+
+
+
   );
 };
 export default Counter;
